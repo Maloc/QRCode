@@ -1,3 +1,10 @@
+/**
+	QRCode allows us to create, display and modify(soon) our own QRCode.
+	@autor Guillaume HOARAU and IT.Sligo.
+	@version 1.0.0
+	@date 04/05/2016
+*/
+
 package main;
 
 import java.io.FileInputStream;
@@ -25,6 +32,7 @@ public class QR {
 	private String filePath = null;
 	private String charset = "UTF-8"; // or "ISO-8859-1"
 
+	/**Constructor of our class. */
 	public QR(String data, String filename) {
 		this.setQrCodeData(data);
 		this.setFilePath(filename);

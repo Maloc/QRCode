@@ -1,3 +1,10 @@
+/**
+	QRCode allows us to create, display and modify(soon) our own QRCode.
+	@autor Guillaume HOARAU and IT.Sligo.
+	@version 1.0.0
+	@date 04/05/2016
+*/
+
 package main;
 
 import java.io.File;
@@ -9,17 +16,20 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+/**
+ * This class catches direction to play the right sound.
+ */
 public class Directions {
 	private final int ROOM_LENGTH = 5; // size of the room string
 	private char building ;
 	private char floor;
 	private String locationOnFloor = null;
 
+	/** Constructor of our class. */
 	public Directions() {
 
 	}
 
-	
 	public char getBuilding() {
 		return building;
 	}

@@ -1,3 +1,10 @@
+/**
+	QRCode allows us to create, display and modify(soon) our own QRCode.
+	@autor Guillaume HOARAU and IT.Sligo.
+	@version 1.0.0
+	@date 04/05/2016
+*/
+
 package main;
 
 import java.io.IOException;
@@ -11,6 +18,9 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.WriterException;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
+/**
+	This class manages all the program.
+*/
 public class Main {
 		static JTextField textField = null;
 		static String qrCodeData = "Day: Tuesday\nTime: 09:00 to 11:00\nSubject: Software Engineering\nRoom: E2004";
@@ -26,7 +36,7 @@ public class Main {
 		static String theDateTime = "Tuesday, 9:00 to 11:00";
 		static String theSubject = "Software Engineering";
 
-		
+		/** This method creates our user interface and creates our first example of QRCode. */
 		 public static void main(String[] args){
 			 try {
 				create();
@@ -43,6 +53,9 @@ public class Main {
 			window.buildGUI();			
 		}
 		
+		 /**
+			This class creates the QRCode and display in the console different information about it.
+		*/
 		 @SuppressWarnings({ "unchecked", "rawtypes" })
 		public static void create() throws WriterException, IOException, NotFoundException {
 			Map hintMap = new HashMap();

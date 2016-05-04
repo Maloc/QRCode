@@ -1,3 +1,10 @@
+/**
+	QRCode allows us to create, display and modify(soon) our own QRCode.
+	@autor Guillaume HOARAU and IT.Sligo.
+	@version 1.0.0
+	@date 04/05/2016
+*/
+
 package main;
 
 import java.awt.Color;
@@ -22,22 +29,28 @@ import javax.swing.JTextField;
 import com.google.zxing.NotFoundException;
 import com.google.zxing.WriterException;
 
+/**
+	This class adds all the components we need in our frames.
+*/
 public class Component extends JPanel{
 	private static final long serialVersionUID = 1L;
 	JButton b1 = new JButton();
 	JButton b2 = new JButton();
 	JButton b3 = new JButton();
-	JTextField jtf = new JTextField("Subject");
-	JTextField jtf1 = new JTextField("Room");
-	JTextField jtf2 = new JTextField("Time1");
-	JTextField jtf3 = new JTextField("Time2");
-	JTextField jtf4 = new JTextField("Date");
+	JTextField jtf = new JTextField("English");
+	JTextField jtf1 = new JTextField("E1006");
+	JTextField jtf2 = new JTextField("9:00");
+	JTextField jtf3 = new JTextField("10:20");
+	JTextField jtf4 = new JTextField("Friday");
 	JLabel label = new JLabel("New Subject");
 	JLabel label1 = new JLabel("New Room  ");
 	JLabel label2 = new JLabel("New Time    ");
 	JLabel label3 = new JLabel("New Date    ");
 	JLabel label4 = new JLabel(" to ");
-
+	
+	/**
+		This method displays background of the frame.
+	 */
 	public void paintComponent(Graphics g){
 		try {
 		      Image img = ImageIO.read(new File("./src/main/resources/images/itSligo.jpeg"));
@@ -53,6 +66,9 @@ public class Component extends JPanel{
 	    menu();
 	  }
 	
+	/**
+		This method creates menu with 3 buttons and their placement.
+	 */
 	public void menu(){
 	    JPanel cell1 = new JPanel();
 	    JButton b1 = new JButton("Create a new QRCode");
@@ -102,6 +118,9 @@ public class Component extends JPanel{
 		b3.addActionListener(new Information());
 	}
 	
+	/**
+		This method opens a new window which call another methods "Display()" and "Sound()".
+	 */
 	class Information implements ActionListener{
 		public void actionPerformed(ActionEvent arg) {
 			JFrame frame = new JFrame();
@@ -118,6 +137,9 @@ public class Component extends JPanel{
 		}
 	}
 	
+	/**
+		This method plays sound with the direction of the concern room.
+	 */
 	class Sound implements ActionListener{
 		public void actionPerformed(ActionEvent arg) {
 			// get directions
@@ -133,6 +155,9 @@ public class Component extends JPanel{
 		}
 	}
 	
+	/**
+		This method allows to add new information for a new QRCode.
+	 */
 	class Create implements ActionListener{
 		public void actionPerformed(ActionEvent arg) {
 			JFrame frame = new JFrame();
@@ -182,6 +207,9 @@ public class Component extends JPanel{
 		}
 	}
 	
+	/**
+		This method recalls create() method which is in the Main class to create a new QRCode.
+	 */
 	class AddInformation implements ActionListener{
 		public void actionPerformed(ActionEvent arg) {
 			Main.qrCodeData = "Day: "+jtf4.getText()+"\nTime: "+jtf2.getText()+" to "+jtf3.getText()+"\nSubject: "+jtf.getText()+"\nRoom: "+jtf1.getText();
@@ -200,6 +228,9 @@ public class Component extends JPanel{
 		}
 	}
 	
+	/**
+		This method opens an error window when you click on "Modify an existing QRCode".
+	 */
 	class Error implements ActionListener{
 		public void actionPerformed(ActionEvent arg) {
 			JOptionPane.showMessageDialog(null, "In development...", "Information", JOptionPane.INFORMATION_MESSAGE);
