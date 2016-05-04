@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -127,6 +128,7 @@ public class Component extends JPanel{
 			JButton b = new JButton("Play Sound");
 			frame.setTitle(Main.theSubject);
 			frame.setSize(350, 350);
+			frame.setIconImage(new ImageIcon("./src/main/resources/images/myQRCode.png").getImage());
 			frame.setBackground(Color.white);
 			frame.setLocationRelativeTo(null);
 			frame.setResizable(false);
@@ -164,6 +166,7 @@ public class Component extends JPanel{
 			JButton b = new JButton ("OK");
 			frame.setTitle("Creating");
 			frame.setSize(300, 220);
+			frame.setIconImage(new ImageIcon("./src/main/resources/images/myQRCode.png").getImage());
 			frame.setBackground(Color.white);
 			frame.setLocationRelativeTo(null);
 			frame.setResizable(false);
